@@ -33,4 +33,4 @@ The sandbox is the security boundary between the extension and the backend. The 
 
 Configuration
 
-All config is generated from Vercel environment variables at build time. Zero hardcoded URLs in the repo.
+All config is generated at build time. Zero hardcoded URLs in the repo.
