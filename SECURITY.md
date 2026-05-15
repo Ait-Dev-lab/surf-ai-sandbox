@@ -37,7 +37,7 @@ extension and the AI backend. Key principles:
 
 | Header | Value |
 |--------|-------|
-| Content-Security-Policy | `default-src 'self' 'unsafe-inline' 'unsafe-eval' https://surf-gateway.onrender.com wss://surf-gateway.onrender.com; frame-ancestors *; media-src 'self'` |
+| Content-Security-Policy | `default-src 'self' 'unsafe-inline' 'unsafe-eval'; frame-ancestors *; media-src 'self'` |
 | X-Content-Type-Options | `nosniff` |
 | Referrer-Policy | `strict-origin-when-cross-origin` |
 | Permissions-Policy | `microphone=(self), autoplay=(self)` |
