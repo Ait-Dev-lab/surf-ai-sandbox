@@ -46,7 +46,7 @@ extension and the AI backend. Key principles:
 ## Scope
 
 This policy covers the sandbox code in this repository and the deployed
-sandbox at `sb-sf.vercel.app`.
+sandbox.
 
-The Gateway (`surf-gateway.onrender.com`) and AI backend are out of scope
+The rest of the backend are out of scope
 for this repository — they live in private infrastructure.
