@@ -31,8 +31,7 @@ extension and the AI backend. Key principles:
    authentication, and rate limiting all operate independently.
 
 4. **No AI processing.** The sandbox handles audio conversion and VAD
-   only. All ML inference happens beyond the G
-Sandbox.
+   only. All ML inference happens beyond the Sandbox.
 
 ## Headers
 
