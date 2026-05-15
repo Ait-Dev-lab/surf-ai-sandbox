@@ -21,7 +21,7 @@ The sandbox is designed to be the security boundary between the browser
 extension and the AI backend. Key principles:
 
 1. **The sandbox holds zero secrets.** All API keys, model IDs, and
-   provider URLs live in the Gateway's Render environment variables.
+   provider URLs live are safe in environment variables.
 
 2. **The sandbox is fully public.** Source code is intentionally
    visible so anyone can audit it. Security comes from architecture,
