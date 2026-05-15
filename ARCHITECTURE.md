@@ -31,11 +31,6 @@ The sandbox performs no AI processing. It handles:
 - **Audio**: WebM-to-WAV conversion (audio-utils.js)
 - **TTS**: Queued playback of AI audio responses (tts.js)
 
-### 3. Gateway → AI Models
-
-The Gateway validates all credentials, resolves model aliases to provider
-IDs, and routes requests to the appropriate AI backend. The sandbox never
-knows which provider or model ID is used.
 
 ## Security Model
 
