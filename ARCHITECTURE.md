@@ -40,7 +40,7 @@ The sandbox performs no AI processing. It handles:
 | Session tokens | Required for all requests |
 | CSP headers | Restrict script sources to sandbox origin |
 | No secrets | Zero API keys, tokens, or model IDs in sandbox code |
-| No AI processing | All ML inference happens behind the Gateway |
+| No AI processing | All ML inference happens beyond the Sandbox |
 
 ## File Map
 
