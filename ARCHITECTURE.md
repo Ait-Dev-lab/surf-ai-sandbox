@@ -8,7 +8,7 @@ via `postMessage`. It never exposes AI endpoints, API keys, or model IDs.
 
 ```
 
-Extension (postMessage) → Sandbox (iframe) → Gateway (Render) → AI (HF/Groq)
+Extension (postMessage) → Sandbox (iframe)
 
 ```
 
