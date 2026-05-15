@@ -1,0 +1,61 @@
+# Architecture — Surf AI Sandbox
+
+## Overview
+
+The sandbox is the security boundary between the Surf AI browser extension
+and the AI backend. It runs in an iframe and communicates with the extension
+via `postMessage`. It never exposes AI endpoints, API keys, or model IDs.
+
+```
+
+Extension (postMessage) → Sandbox (iframe) → Gateway (Render) → AI (HF/Groq)
+
+```
+
+## Layers
+
+### 1. Extension → Sandbox (postMessage)
+
+The extension sends commands to the sandbox via the postMessage protocol.
+The sandbox validates the message origin against `ALLOWED_ORIGINS`.
+
+### 2. Sandbox → Gateway (REST + Socket.IO)
+
+Authenticated requests are forwarded to the Gateway with:
+- `Authorization: Bearer <JWT>`
+- `x-session-token: <session_token>`
+- `Origin: https://sb-sf.vercel.app`
+
+The sandbox performs no AI processing. It handles:
+- **VAD**: Energy-based voice activity detection (vad.js)
+- **Audio**: WebM-to-WAV conversion (audio-utils.js)
+- **TTS**: Queued playback of AI audio responses (tts.js)
+
+### 3. Gateway → AI Models
+
+The Gateway validates all credentials, resolves model aliases to provider
+IDs, and routes requests to the appropriate AI backend. The sandbox never
+knows which provider or model ID is used.
+
+## Security Model
+
+| Layer | Protection |
+|-------|-----------|
+| Origin validation | Only messages from allowed origins are processed |
+| Session tokens | Required for all Gateway requests |
+| CSP headers | Restrict script sources to sandbox origin |
+| No secrets | Zero API keys, tokens, or model IDs in sandbox code |
+| No AI processing | All ML inference happens behind the Gateway |
+
+## File Map
+
+| File | Purpose |
+|------|---------|
+| sandbox-main.js | Orchestrator — mic, VAD, mode switching |
+| messages.js | postMessage bridge to extension |
+| rest-client.js | Gateway communication protocol |
+| vad.js | Energy-based voice activity detection |
+| tts.js | Audio playback queue |
+| audio-utils.js | WebM-to-WAV conversion |
+| config.js | Generated at build time from Vercel env vars |
+```
