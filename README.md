@@ -1,6 +1,6 @@
 # Surf AI — Sandbox
 
-Secure iframe sandbox for the Surf AI browser extension. Handles authentication, voice activity detection, audio processing, and model routing. Communicates with the extension via postMessage and forwards requests to the Gateway.
+Secure iframe sandbox for the Surf AI browser extension. Handles authentication, voice activity detection, audio processing, and model routing. Communicates with the extension via postMessage and forwards requests.
 
 ## Architecture
 
