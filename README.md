@@ -6,7 +6,7 @@ Secure iframe sandbox for the Surf AI browser extension. Handles authentication,
 
 ```
 
-Extension (postMessage) → Sandbox (iframe) → AI Models
+Extension (postMessage) → Sandbox (iframe)
 
 ```
 
