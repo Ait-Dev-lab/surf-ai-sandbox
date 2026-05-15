@@ -21,7 +21,7 @@ The sandbox validates the message origin against `ALLOWED_ORIGINS`.
 
 ### 2. Sandbox → Communication (REST + Socket.IO)
 
-Authenticated requests are forwarded to the Gateway with:
+Authenticated requests are forwarded with:
 - `Authorization: Bearer <JWT>`
 - `x-session-token: <session_token>`
 - `Origin: https://sb-sf.vercel.app`
