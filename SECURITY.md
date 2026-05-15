@@ -3,9 +3,9 @@
 ## Reporting a Vulnerability
 
 If you discover a security vulnerability in the Surf AI sandbox, please
-do not open a public issue. Instead, email:
+do not open a public issue. Instead, Send Message:
 
-**newton-ait@proton.me**
+**https://surf-ai-site.web.app/contact.html**
 
 Please include:
 - A detailed description of the vulnerability
