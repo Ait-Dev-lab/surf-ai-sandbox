@@ -10,7 +10,7 @@ Extension (postMessage) → Sandbox (iframe) → Gateway → AI Models
 
 ```
 
-The sandbox is the security boundary between the extension and the backend. The extension never touches the Gateway or AI models directly.
+The sandbox is the security boundary between the extension and the backend. The extension never touches the AI models directly.
 
 ## What It Does
 
