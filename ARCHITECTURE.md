@@ -19,7 +19,7 @@ Extension (postMessage) → Sandbox (iframe)
 The extension sends commands to the sandbox via the postMessage protocol.
 The sandbox validates the message origin against `ALLOWED_ORIGINS`.
 
-### 2. Sandbox → Gateway (REST + Socket.IO)
+### 2. Sandbox → Communication (REST + Socket.IO)
 
 Authenticated requests are forwarded to the Gateway with:
 - `Authorization: Bearer <JWT>`
@@ -37,7 +37,7 @@ The sandbox performs no AI processing. It handles:
 | Layer | Protection |
 |-------|-----------|
 | Origin validation | Only messages from allowed origins are processed |
-| Session tokens | Required for all Gateway requests |
+| Session tokens | Required for all requests |
 | CSP headers | Restrict script sources to sandbox origin |
 | No secrets | Zero API keys, tokens, or model IDs in sandbox code |
 | No AI processing | All ML inference happens behind the Gateway |
@@ -48,7 +48,7 @@ The sandbox performs no AI processing. It handles:
 |------|---------|
 | sandbox-main.js | Orchestrator — mic, VAD, mode switching |
 | messages.js | postMessage bridge to extension |
-| rest-client.js | Gateway communication protocol |
+| rest-client.js | Communication protocol |
 | vad.js | Energy-based voice activity detection |
 | tts.js | Audio playback queue |
 | audio-utils.js | WebM-to-WAV conversion |
